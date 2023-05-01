@@ -1,0 +1,12 @@
+def solution(name, yearning, photo):
+    matching={}
+    answer = []
+    for idx in range(len(name)):
+        matching[name[idx]]=yearning[idx]
+    for people in photo:
+        score=0
+        for man in people:
+            if(matching.get(man)):
+                score+=matching[man]
+        answer.append(score)
+    return answer
